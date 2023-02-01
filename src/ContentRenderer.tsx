@@ -13,6 +13,7 @@ export function ContentRenderer({
     style,
     dataExpression,
     dataType,
+    customFonts,
     onClickAction,
     onClickLinkAttribute
 }: ContentRendererProps<CustomStyle>): ReactElement {
@@ -25,7 +26,7 @@ export function ContentRenderer({
             setIsLoaded(true);
         }
     }, [dataExpression.status, dataType.status]);
-
+    const fonts = customFonts.split(",").map(f => f.trim());
     // On pressing a link we communicate the href to a Mendix attribute (if defined). Next to that we decide
     // how to handle it. If action is defined, run the action, otherwise let the system handle it.
     const onLinkPress = (_event: GestureResponderEvent, href: string): void => {
@@ -73,5 +74,5 @@ export function ContentRenderer({
         );
     }
 
-    return <Renderer styles={styles} html={output} onPress={onLinkPress} />;
+    return <Renderer styles={styles} html={output} fonts={fonts} onPress={onLinkPress} />;
 }

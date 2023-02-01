@@ -12,6 +12,7 @@ export interface ContentRendererProps<Style> {
     style: Style[];
     dataExpression: DynamicValue<string>;
     dataType: DynamicValue<Big>;
+    customFonts: string;
     onClickAction?: ActionValue;
     onClickLinkAttribute?: EditableValue<string>;
 }
@@ -23,6 +24,7 @@ export interface ContentRendererPreviewProps {
     readOnly: boolean;
     dataExpression: string;
     dataType: string;
+    customFonts: string;
     onClickAction: {} | null;
     onClickLinkAttribute: string;
 }
