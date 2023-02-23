@@ -25,6 +25,10 @@
 Will revert to HTML if number is not recognized</description>
                 <returnType type="Integer" />
             </property>
+            <property key="customFonts" type="string" required="false">
+                <caption>Custom fonts</caption>
+                <description>Comma seperated list if custom fonts for HTML only.</description>
+            </property>
         </propertyGroup>
 
         <!-- LINK HANDLING -->
